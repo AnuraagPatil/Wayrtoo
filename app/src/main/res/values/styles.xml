@@ -1,0 +1,44 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme1" parent="android:Theme.Material.Dialog.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">serif</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:typeface">serif</item>
+    </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/colorblackSoft</item>
+        <item name="colorControlActivated">@color/colorRed</item>
+    </style>
+
+    <style name="exp_toolbar_title" parent="@android:style/TextAppearance.Holo.Medium">
+        <item name="android:textSize">30dp</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="coll_toolbar_title" parent="@android:style/TextAppearance.Medium">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/colorBlackShade</item>
+    </style>
+
+   <!-- <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        &lt;!&ndash; Customize color of navigation drawer icon and back arrow &ndash;&gt;
+        <item name="android:background">@drawable/toolbar_gradient_color</item>
+        <item name="colorControlNormal">@color/colorBlackShade</item>
+    </style>-->
+    <style name="ToolbarStyle" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <item name="android:background">@color/colorWhite</item>
+        <item name="colorControlNormal">@color/colorBlackShade</item>
+    </style>
+
+</resources>

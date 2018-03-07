@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="1dp"
+    android:layout_marginRight="1dp"
+    android:layout_marginBottom="2dp"
+    android:layout_marginTop="2dp"
+
+    card_view:cardCornerRadius="0dp"
+    card_view:cardElevation="0dp"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/ll_content_click"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="120dp"
+            android:layout_height="110dp"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:visibility="visible" />
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="120dp"
+                android:layout_height="110dp"
+                android:paddingRight="2dp"
+                android:src="@drawable/logo"
+                android:layout_gravity="center"
+                />
+            <!-- android:src="@drawable/logo" -->
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dubai City Tour"
+                android:textColor="@color/colorBlack"
+                android:padding="1dp"
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="14dp"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/tv_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dubai - United Arab Emirates"
+                android:padding="1dp"
+                android:textColor="@color/colorText"
+                android:layout_weight="1" />
+
+
+
+            <TextView
+                android:id="@+id/tv_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="04hr 15min"
+                android:padding="1dp"
+                android:textColor="@color/colorBlack"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RatingBar
+                    android:id="@+id/rb_rating"
+                    android:theme="@style/RatingBar"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:indeterminateDrawable="@color/colorRed"
+                    android:numStars="5"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:id="@+id/tv_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="45.32"
+                    android:padding="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTextRed"
+                    android:layout_gravity="right"
+                    android:gravity="right"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:layout_marginRight="5dp"
+                android:padding="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Pay by"
+                    android:textColor="@color/colorBlack"
+                    android:paddingRight="5dp"
+                    />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_a_coin"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_b_coin"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_c_coin"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_d_coin"
+                    android:gravity="center"
+                    android:layout_gravity="center" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</android.support.v7.widget.CardView>

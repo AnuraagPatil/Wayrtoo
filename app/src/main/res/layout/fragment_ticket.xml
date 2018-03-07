@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/fragment_container"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/show_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp">
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+                        <ImageView
+                            android:id="@+id/city_background"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_gravity="center" />
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#80000000">
+                        </FrameLayout>
+                    </FrameLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/txt_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorWhite"
+                            android:text="Tickets"
+                            android:textAllCaps="true"
+                            android:textSize="20dp" />
+                        <TextView
+                            android:id="@+id/txt_title_sub"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Total number of 100 activity"
+                            android:textSize="14dp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorWhite" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include layout="@layout/rv_list"/>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/show_all_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:contentPadding="8dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginBottom="1dp">
+                    <TextView
+                        android:id="@+id/total_list_size"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/colorBlack"
+                        android:textAllCaps="true"
+                        android:text="Show All"/>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:contentPadding="0dp"
+                    android:layout_marginBottom="1dp">
+                    <com.google.android.gms.maps.MapView
+                        android:id="@+id/mapView"
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp">
+                    </com.google.android.gms.maps.MapView>
+                </android.support.v7.widget.CardView>
+
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/show_all_map"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    card_view:cardCornerRadius="0dp"
+                    card_view:contentPadding="8dp"
+                    android:layout_marginBottom="1dp">
+                    <TextView
+                        android:id="@+id/total_map_size"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorBlack"
+                        android:text="Explore Dubai"/>
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>
