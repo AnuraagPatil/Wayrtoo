@@ -106,6 +106,7 @@ public class ActivitiesAllListsActivity extends AppCompatActivity {
                 range_filter_arraylist.add(activitiesListModels.get(i));
             }
         }
+
         activitiesListAdapter = new ActivitiesAllListAdapter(mContext, range_filter_arraylist,ActivitiesAllListsActivity.this);
         rv_ticket_list.setAdapter(activitiesListAdapter);
 
@@ -184,8 +185,6 @@ public class ActivitiesAllListsActivity extends AppCompatActivity {
                         tv_distance.setTextColor(Color.parseColor("#000000"));
                         sessionManager.setSorting_Position("1");
                         dialog.dismiss();
-
-
 
                         Collections.sort(range_filter_arraylist, new Comparator< ActivitiesListModel >() {
                             @Override public int compare(ActivitiesListModel p1, ActivitiesListModel p2) {

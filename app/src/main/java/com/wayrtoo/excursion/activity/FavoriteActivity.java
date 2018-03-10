@@ -21,5 +21,6 @@ public class FavoriteActivity extends AppCompatActivity {
         mContext = this;
         ButterKnife.bind(this);
         FontsOverride.setDefaultFont(mContext, "SERIF", "fonts/DroidSerif-Regular.ttf");
+
     }
 }

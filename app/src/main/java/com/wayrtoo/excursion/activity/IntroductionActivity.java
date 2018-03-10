@@ -50,7 +50,6 @@ public class IntroductionActivity extends AppCompatActivity {
     private SessionManager sessionManager;
     private Context context;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -205,6 +204,5 @@ public class IntroductionActivity extends AppCompatActivity {
             container.removeView(view);
         }
     }
-
 }
 

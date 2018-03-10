@@ -38,7 +38,6 @@
                           app:civ_border_color="@color/colorWhite"
                           app:civ_border_width="1dp" />-->
 
-
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -64,12 +63,9 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="14dp" />
 
-
                     </LinearLayout>
 
-
                 </LinearLayout>
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -83,7 +79,7 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="0.3"
-                        android:src="@drawable/money" />
+                        android:src="@drawable/ic_ticket" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -92,7 +88,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1.7"
                         android:drawableRight="@drawable/ic_right"
-                        android:text="Travonect Money"
+                        android:text="Tickets"
                         android:textColor="@color/colorBlack" />
 
                 </LinearLayout>
@@ -112,10 +108,10 @@
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
                         android:layout_weight="0.3"
-                        android:src="@drawable/ic_flight_tracker" />
+                        android:src="@drawable/bag_for_travel" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -124,8 +120,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1.7"
                         android:drawableRight="@drawable/ic_right"
-
-                        android:text="Flight Tracker"
+                        android:text="Tours"
                         android:textColor="@color/colorBlack" />
 
                 </LinearLayout>
@@ -148,7 +143,7 @@
                         android:layout_height="25dp"
                         android:layout_gravity="center"
                         android:layout_weight="0.3"
-                        android:src="@drawable/cashback" />
+                        android:src="@drawable/boat" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -157,7 +152,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1.7"
                         android:drawableRight="@drawable/ic_right"
-                        android:text="Cashback"
+                        android:text="Dubai Dhow Cruise"
                         android:textColor="@color/colorBlack" />
 
                 </LinearLayout>
@@ -177,10 +172,10 @@
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
                         android:layout_weight="0.3"
-                        android:src="@drawable/ic_feedback" />
+                        android:src="@drawable/parachute" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -189,7 +184,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1.7"
                         android:drawableRight="@drawable/ic_right"
-                        android:text="Feedback"
+                        android:text="Adventure travel"
                         android:textColor="@color/colorBlack" />
 
                 </LinearLayout>
@@ -209,10 +204,10 @@
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
                         android:layout_weight="0.3"
-                        android:src="@drawable/ic_share" />
+                        android:src="@drawable/yatch" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -221,7 +216,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1.7"
                         android:drawableRight="@drawable/ic_right"
-                        android:text="Share App"
+                        android:text="Luxury"
                         android:textColor="@color/colorBlack" />
 
                 </LinearLayout>
@@ -241,10 +236,106 @@
 
                     <ImageView
                         android:layout_width="0dp"
-                        android:layout_height="wrap_content"
+                        android:layout_height="30dp"
                         android:layout_gravity="center"
                         android:layout_weight="0.3"
-                        android:src="@drawable/ic_settings" />
+                        android:src="@drawable/highway_road" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1.7"
+                        android:drawableRight="@drawable/ic_right"
+                        android:text="Road Trip"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_margin="10dp"
+                    android:background="#E3DFDA" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.3"
+                        android:src="@drawable/man_in_hike" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1.7"
+                        android:drawableRight="@drawable/ic_right"
+                        android:text="Hiking"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_margin="10dp"
+                    android:background="#E3DFDA" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.3"
+                        android:src="@drawable/sailboat" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1.7"
+                        android:drawableRight="@drawable/ic_right"
+                        android:text="Boat tour"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_margin="10dp"
+                    android:background="#E3DFDA" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.3"
+                        android:src="@drawable/settings" />
 
                     <TextView
                         android:layout_width="0dp"
@@ -258,10 +349,44 @@
 
                 </LinearLayout>
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2px"
+                    android:layout_margin="10dp"
+                    android:background="#E3DFDA" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.3"
+                        android:src="@drawable/ic_share" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1.7"
+                        android:drawableRight="@drawable/ic_right"
+                        android:text="Share App"
+                        android:textColor="@color/colorBlack" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
         </LinearLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
 </FrameLayout>

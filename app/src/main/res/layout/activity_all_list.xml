@@ -16,7 +16,6 @@
 
         <include layout="@layout/toolbar_layout_filter"></include>
 
-
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rv_list"
                 android:layout_width="match_parent"
@@ -57,5 +56,6 @@
                 android:text="Sort Results"
                 android:textColor="@color/colorWhite" />
         </android.support.v7.widget.CardView>
+
     </RelativeLayout>
 </RelativeLayout>

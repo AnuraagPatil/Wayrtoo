@@ -55,7 +55,6 @@ public class SplashActivity extends AppCompatActivity {
 
     CircularProgressView progressView;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,12 +64,14 @@ public class SplashActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         v = findViewById(R.id.view);
 
-        progressView = (CircularProgressView) findViewById(R.id.progress_view);
+        progressView = findViewById(R.id.progress_view);
 
         sessionManager = new SessionManager(context);
         sessionManager.setBaseUrl("http://guiddooworld.com/apiservice/Guiddoo_Service.svc/");
+
         zoom = AnimationUtils.loadAnimation(context,R.anim.fade_upper);
         excursion = new excursion();
+
         sessionManager.setSelectFragmentPosition("0");
         //excursion.onCreate();
     }
@@ -84,11 +85,13 @@ public class SplashActivity extends AppCompatActivity {
 
         if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER) && !locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
             GPSTracker.showSettingsAlert(SplashActivity.this);
+
         }
         else
             {
             if (checkAppPermissions(context, AppPermissions)) {
                 startAnimation();
+
                 if (sessionManager.getCityStatus().equalsIgnoreCase("true")) {
 
                     new Handler().postDelayed(new Runnable() {
@@ -113,6 +116,7 @@ public class SplashActivity extends AppCompatActivity {
                         }
                     }, SPLASH_TIME_OUT);
 
+
                 } else if (gpsTracker.isNetworkAvailable()) {
                     getCityAPILIST();
 
@@ -124,9 +128,7 @@ public class SplashActivity extends AppCompatActivity {
             } else {
                 ActivityCompat.requestPermissions(this, AppPermissions, 102);
             }
-
         }
-
     }
 
     private void getCityAPILIST() {
@@ -176,9 +178,12 @@ public class SplashActivity extends AppCompatActivity {
             JSONObject jsonStatus = jsonData.getJSONObject("status");
 
             if (jsonStatus.getString("Success").equalsIgnoreCase("true")) {
+
                 sessionManager.setCityStatus(jsonStatus.getString("Success"));
                 sessionManager.setCityList(String.valueOf(jsonData.getJSONArray("cities")));
+
                 JSONArray jsonArrayCity = jsonData.getJSONArray("cities");
+
                 for (int i = 0; jsonArrayCity.length() > i; i++) {
                     CityListModel listModel = new CityListModel();
                     JSONObject jsonCity = jsonArrayCity.getJSONObject(i);
@@ -209,11 +214,12 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 }, 4000);
 
-
             }else{
                 Snackbar.make(v, "Something went wrong. Please check your internet connection or try again later.", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
+
+            progressView.stopAnimation();
 
         } catch (JSONException e) {
             Snackbar.make(v, "Something went wrong. Please check your internet connection or try again later.", Snackbar.LENGTH_LONG)
@@ -221,7 +227,6 @@ public class SplashActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
 
     boolean checkAppPermissions(Context context, String[] permissions) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null) {
@@ -233,7 +238,6 @@ public class SplashActivity extends AppCompatActivity {
         }
         return true;
     }
-
 
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
