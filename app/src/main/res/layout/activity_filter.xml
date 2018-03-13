@@ -295,10 +295,7 @@
             android:text="Apply Filters"
             android:layout_alignParentBottom="true"
             android:background="@color/colorPrimary"
-            android:textColor="@color/colorWhite"
-            />
+            android:textColor="@color/colorWhite" />
     </RelativeLayout>
-
-
 
 </LinearLayout>

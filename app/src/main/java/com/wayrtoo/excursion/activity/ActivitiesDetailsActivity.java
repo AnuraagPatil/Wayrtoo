@@ -13,7 +13,6 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -86,20 +85,11 @@ import cz.msebera.android.httpclient.Header;
 
 public class ActivitiesDetailsActivity extends AppCompatActivity implements LocationListener, OnMapReadyCallback {
 
-    @BindView(R.id.collapsing_toolbar)
-    CollapsingToolbarLayout ctl;
-
-    @BindView(R.id.tv_toolbar)
-    Toolbar myToolbar;
-
-    @BindView(R.id.iv_background)
-    ImageView iv_background;
-
     @BindView(R.id.tv_title)
-    TextView tv_title;
+    TextView toolbar_title;
 
-    @BindView(R.id.tv_rating)
-    TextView tv_rating;
+    @BindView(R.id.tv_back)
+    TextView go_back;
 
     @BindView(R.id.tv_price)
     TextView tv_price;
@@ -119,12 +109,6 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
     @BindView(R.id.rb_rating)
     RatingBar rb_rating;
 
-    @BindView(R.id.tv_available_for_child)
-    TextView tv_available_for_child;
-
-    @BindView(R.id.tv_children_age_range)
-    TextView tv_children_age_range;
-
     @BindView(R.id.tv_long_description)
     TextView tv_long_description;
 
@@ -134,11 +118,11 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
     @BindView(R.id.read_more)
     TextView read_more;
 
+    @BindView(R.id.tv_inclusion_read_more)
+    TextView tv_inclusion_read_more;
+
     @BindView(R.id.slider)
     SliderLayout sliderLayout;
-
-    @BindView(R.id.iv_like)
-    ImageView iv_like;
 
     @BindView(R.id.tv_available_today)
     TextView tv_available_today;
@@ -188,6 +172,7 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
     private IconGenerator iconFactory;
     private SupportMapFragment mMapView;
     HashMap<String, String> Hash_file_maps;
+    private boolean isInclusionClicked = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -199,9 +184,7 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
         customResponseDialog = new CustomResponseDialog(mContext);
         gpsTracker = new GPSTracker(mContext, this);
         myCalendar = Calendar.getInstance();
-        setSupportActionBar(myToolbar);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Hash_file_maps = new HashMap<String, String>();
         Bundle b = getIntent().getExtras();
         FontsOverride.setDefaultFont(mContext, "SERIF", "fonts/DroidSerif-Regular.ttf");
@@ -210,26 +193,19 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
 
         if (b != null) {
             Event_ID = getIntent().getStringExtra("EventID");
-            ctl.setTitle(getIntent().getStringExtra("EventName"));
+
+            toolbar_title.setText(getIntent().getStringExtra("EventName"));
+
             Position = getIntent().getIntExtra("Position",0);
             Log.e("Position---->",String.valueOf(Position));
             //Position = Integer.valueOf(getIntent().getStringExtra("Position"));
             activitiesListModels =(ArrayList<ActivitiesListModel>)getIntent().getSerializableExtra("ActivityListModel");
-            Glide.with(mContext)
-                    // .load(getIntent().getStringExtra("Image"))
-                    .load(sessionManager.getCityImage())
-                    .asBitmap()
-                    .diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .animate(R.anim.fade_in)
-                    //.centerCrop()
-                    .into(iv_background);
-            ctl.setCollapsedTitleTextAppearance(R.style.coll_toolbar_title);
-            ctl.setExpandedTitleTextAppearance(R.style.exp_toolbar_title);
 
         } else {
             Snackbar.make(findViewById(R.id.coordinate_container), "Something went wrong. Please try again.", Snackbar.LENGTH_LONG).show();
         }
-        myToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+
+        go_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
@@ -258,27 +234,43 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
             }
         });
 
-
-        if (activitiesListModels.get(Position).getSelected()) {
-            iv_like.setImageResource(R.drawable.ic_like);
-        }
-        else {
-            iv_like.setImageResource(R.drawable.ic_unlike);
-        }
-
-        iv_like.setOnClickListener(new View.OnClickListener() {
+        tv_inclusion_read_more.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (activitiesListModels.get(Position).getSelected()) {
-                    iv_like.setImageResource(R.drawable.ic_unlike);
-                    activitiesListModels.get(Position).setSelected(false);
-                }
-                else {
-                    iv_like.setImageResource(R.drawable.ic_like);
-                    activitiesListModels.get(Position).setSelected(true);
+                if (isInclusionClicked) {
+                    tv_inclusion.setMaxLines(2);
+                    isInclusionClicked = false;
+                    tv_inclusion_read_more.setText("READ MORE");
+                } else {
+                    tv_inclusion.setMaxLines(Integer.MAX_VALUE);
+                    isInclusionClicked = true;
+                    tv_inclusion_read_more.setText("HIDE DETAILS");
                 }
             }
         });
+
+
+
+//        if (activitiesListModels.get(Position).getSelected()) {
+//            iv_like.setImageResource(R.drawable.ic_like);
+//        }
+//        else {
+//            iv_like.setImageResource(R.drawable.ic_unlike);
+//        }
+//
+//        iv_like.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if (activitiesListModels.get(Position).getSelected()) {
+//                    iv_like.setImageResource(R.drawable.ic_unlike);
+//                    activitiesListModels.get(Position).setSelected(false);
+//                }
+//                else {
+//                    iv_like.setImageResource(R.drawable.ic_like);
+//                    activitiesListModels.get(Position).setSelected(true);
+//                }
+//            }
+//        });
 
         book_now.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1113,9 +1105,9 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
 
             mMapView.getMapAsync(ActivitiesDetailsActivity.this);
 
-            tv_title.setText(activitiesDetailstModels.get(0).getName());
+            toolbar_title.setText(activitiesDetailstModels.get(0).getName());
+
             rb_rating.setRating(Float.parseFloat(activitiesDetailstModels.get(0).getRating()));
-            tv_rating.setText(activitiesDetailstModels.get(0).getRating() + " Ratings");
             tv_price.setText(activitiesDetailstModels.get(0).getCurrency() + " " + activitiesDetailstModels.get(0).getStarting_from_price());
             tv_city.setText(activitiesDetailstModels.get(0).getCity());
             tv_address.setText(activitiesDetailstModels.get(0).getAddress());
@@ -1125,14 +1117,6 @@ public class ActivitiesDetailsActivity extends AppCompatActivity implements Loca
                 tv_duration.setText(activitiesDetailstModels.get(0).getDay() + " day " + activitiesDetailstModels.get(0).getHour() + " hr " + activitiesDetailstModels.get(0).getMin() + " min");
             }
             tv_short_description.setText(activitiesDetailstModels.get(0).getShort_description());
-            if (activitiesDetailstModels.get(0).getAvailable_for_child().equalsIgnoreCase("true")) {
-                tv_available_for_child.setTextColor(Color.parseColor("#347038"));
-                tv_available_for_child.setText("Yes");
-            } else {
-                tv_available_for_child.setTextColor(Color.parseColor("#DB6556"));
-                tv_available_for_child.setText("No");
-            }
-            tv_children_age_range.setText(activitiesDetailstModels.get(0).getChild_min_age() + " to " + activitiesDetailstModels.get(0).getChild_max_age());
             tv_long_description.setText(Html.fromHtml(activitiesDetailstModels.get(0).getDescription()));
 
             if(arrayListInclusion.size()>0 && arrayListInclusion!=null){

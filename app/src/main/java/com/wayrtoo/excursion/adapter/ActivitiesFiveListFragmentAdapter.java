@@ -50,6 +50,7 @@ public class ActivitiesFiveListFragmentAdapter extends RecyclerView.Adapter<Acti
         private ProgressBar progressBar;
 
         private LinearLayout ll_content_click;
+
         public MyViewHolder(View view) {
             super(view);
             sessionManager = new SessionManager(mContext);
@@ -62,9 +63,7 @@ public class ActivitiesFiveListFragmentAdapter extends RecyclerView.Adapter<Acti
             tv_address = (TextView) view.findViewById(R.id.tv_address);
             tv_price = (TextView) view.findViewById(R.id.tv_price);
             iv_image = (ImageView)view.findViewById(R.id.iv_image);
-            iv_like = (ImageView)view.findViewById(R.id.iv_like);
             progressBar = (ProgressBar) view.findViewById(R.id.progress);
-
         }
     }
     @Override

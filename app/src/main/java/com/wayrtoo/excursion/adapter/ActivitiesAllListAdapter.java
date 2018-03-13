@@ -68,7 +68,6 @@ public class ActivitiesAllListAdapter extends RecyclerView.Adapter<ActivitiesAll
             tv_address = (TextView) view.findViewById(R.id.tv_address);
             tv_price = (TextView) view.findViewById(R.id.tv_price);
             iv_image = (ImageView) view.findViewById(R.id.iv_image);
-            iv_like = (ImageView) view.findViewById(R.id.iv_like);
             progressBar = (ProgressBar) view.findViewById(R.id.progress);
         }
     }

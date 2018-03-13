@@ -22,8 +22,7 @@
             android:layout_width="120dp"
             android:layout_height="match_parent"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:padding="5dp">
+            android:gravity="center">
 
             <ProgressBar
                 android:id="@+id/progress"
@@ -36,10 +35,14 @@
             <ImageView
                 android:id="@+id/iv_image"
                 android:layout_width="120dp"
-                android:layout_height="110dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
-                android:paddingRight="2dp"
+                android:layout_margin="5dp"
+                android:paddingBottom="7dp"
+                android:paddingTop="7dp"
+                android:scaleType="centerCrop"
                 android:src="@drawable/ic_launcher_background" />
+
         </RelativeLayout>
 
         <LinearLayout
@@ -66,13 +69,6 @@
                     android:textColor="@color/colorBlack"
                     android:textSize="14dp" />
 
-                <ImageView
-                    android:id="@+id/iv_like"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_unlike" />
-
             </LinearLayout>
 
             <TextView
@@ -80,45 +76,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:maxLines="1"
                 android:padding="1dp"
                 android:text="Dubai - United Arab Emirates"
                 android:textColor="@color/colorText" />
 
-            <TextView
-                android:id="@+id/tv_duration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="1dp"
-                android:text="04hr 15min" />
-
-            <LinearLayout
+            <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content">
 
-                <RatingBar
-                    android:id="@+id/rb_rating"
-                    style="?android:attr/ratingBarStyleSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:indeterminateDrawable="@color/colorRed"
-                    android:isIndicator="true"
-                    android:numStars="5"
-                    android:theme="@style/RatingBar" />
+                <TableRow>
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="right"
-                    android:layout_weight="1">
+                    <TextView
+                        android:id="@+id/tv_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_weight="1"
+                        android:padding="1dp"
+                        android:text="04hr 15min" />
 
                     <TextView
                         android:id="@+id/tv_price_slashed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_column="1"
                         android:layout_gravity="right"
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
@@ -127,10 +109,27 @@
                         android:text="@string/striked"
                         android:textSize="11dp" />
 
+                </TableRow>
+
+                <TableRow>
+
+                    <RatingBar
+                        android:id="@+id/rb_rating"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_column="0"
+                        android:layout_gravity="center"
+                        android:indeterminateDrawable="@color/colorRed"
+                        android:isIndicator="true"
+                        android:numStars="5"
+                        android:theme="@style/RatingBar" />
+
                     <TextView
                         android:id="@+id/tv_price"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_column="1"
                         android:layout_gravity="right"
                         android:layout_marginRight="5dp"
                         android:layout_weight="1"
@@ -139,9 +138,10 @@
                         android:text="AED 45.32"
                         android:textColor="@color/colorTextRed"
                         android:textSize="14dp" />
-                </LinearLayout>
 
-            </LinearLayout>
+                </TableRow>
+
+            </TableLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
