@@ -240,7 +240,6 @@ public class ActivitiesAllListsActivity extends AppCompatActivity {
                     }
                 });
 
-
                 dialog.show();
             }
         });
